@@ -24,6 +24,11 @@ public class BookServiceImpl implements BookService {
     private final AuthorRepository authorRepository;
 
     @Override
+    public Optional<Long> numberOfBooks() {
+        return Optional.of(this.bookRepository.count());
+    }
+
+    @Override
     public Page<Book> findAllWithPagination(Pageable pageable) {
         return bookRepository.findAll(pageable);
     }

@@ -9,6 +9,7 @@ import java.util.Optional;
 
 public interface BookService {
 
+    Optional<Long> numberOfBooks();
     Page<Book> findAllWithPagination(Pageable pageable);
 
     Optional<Book> findById(Long id);

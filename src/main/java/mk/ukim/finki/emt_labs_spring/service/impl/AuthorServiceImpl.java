@@ -10,6 +10,7 @@ import mk.ukim.finki.emt_labs_spring.repository.CountryRepository;
 import mk.ukim.finki.emt_labs_spring.service.AuthorService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,6 +19,11 @@ public class AuthorServiceImpl implements AuthorService {
 
     private final AuthorRepository authorRepository;
     private final CountryRepository countryRepository;
+
+    @Override
+    public List<Author> findAll() {
+        return this.authorRepository.findAll();
+    }
 
     @Override
     public Optional<Author> findById(Long id) {
